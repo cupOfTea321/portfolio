@@ -1,0 +1,28 @@
+
+.banner img {
+    animation: updown 3s linear infinite;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+
+
+.linkArrow svg {
+    font-size: 25px;
+    margin-left: 10px;
+    color: white;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+}
+.linkArrow:hover svg{
+    margin-left: 25px;
+}

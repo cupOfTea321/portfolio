@@ -119,7 +119,7 @@ function Navbar() {
                     </Box>
 
                     <Navicons/>
-                    <Button color="inherit">Let`s Connect</Button>
+                    <Button color="inherit" sx={{border: '1px solid white'}}>Let`s Connect</Button>
 
                 </Toolbar>
             </Container>
