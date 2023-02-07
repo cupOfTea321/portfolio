@@ -26,3 +26,30 @@
 .linkArrow:hover svg{
     margin-left: 25px;
 }
+
+.background-image-left {
+    top: 28%;
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+    z-index: -4;
+}
+/*SWIPER*/
+.swiper-button-next{
+    color: black;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after{
+
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.swiper-pagination,
+.swiper-pagination-clickable,
+.swiper-pagination-bullets,
+.swiper-pagination-horizontal{
+    display: none;
+}
