@@ -27,7 +27,8 @@ const Skills = () => {
                 marginTop: '-60px',
 
             }}>
-                <Stack  sx={{display: 'flex', justifyContent: 'center', width: '60%', marginLeft: {lg:30, md: 22, sm:15, xs:10 }}}>
+                <Stack  sx={{display: 'flex', justifyContent: 'center', width: {xs:'100%', sm:'60%'},
+                    marginLeft: {lg:30, md: 22, sm:15, xs:0 }}}>
                     <Typography variant={'h2'} component={'h2'}>
                         Skills
                     </Typography>

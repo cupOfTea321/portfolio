@@ -22,18 +22,22 @@ const Banner = () => {
                     border: '1px solid rgba(255, 255, 255, 0.5)',
                     fontSize: '20px',
                     marginBottom: '16px',
-                    width: '65%'
+                    width: {xs: '100%', sm:'65%'}
+
                 }}
                 >
                     Welcome to my Portfolio
                 </Typography>
                 <Typography
-                    variant={'h2'}
+
                     component={"h1"}
+                    sx={{
+                        fontSize: {sm:'32px', md: '48px'}
+                    }}
                 >
                     Hi! I`m Alex Web Developer
                 </Typography>
-                <Typography sx={{fontSize: '18px'}}>
+                <Typography sx={{fontSize: {xs: '14px',sm:'18px'}}}>
                     <p style={{color: '#B8B8B8'}}>
                         I make adaptive cross-platform web applications such as video
                         or music platforms, landing pages and others. Web development

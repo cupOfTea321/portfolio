@@ -12,14 +12,14 @@ const Footer = () => {
             <Container  sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             }}>
                 <Box>
-                    <Typography variant={'h3'}>
+                    <Typography sx={{fontSize: {xs: '24px', sm: '32px', md: '48px'}}}>
                         AlexK
                     </Typography>
 
                 </Box>
                 <Box>
                     <Navicons/>
-                    <Typography>
+                    <Typography sx={{fontSize: {xs: '12px', sm: '16px'}}}>
                         Copyright 2023. All Rights Reserved
                     </Typography>
                 </Box>

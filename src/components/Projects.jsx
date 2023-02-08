@@ -34,7 +34,8 @@ const Projects = () => {
         <Box display={'flex'} mt={10} id={'Projects'}>
             <Container >
                 <Box width={'60%'} textAlign={'center'} sx={{
-                    marginLeft: {lg:30, md: 22, sm:15, xs:12 }
+                    marginLeft: {lg:30, md: 22, sm:15, xs:0 },
+                    width: {xs: '100%', sm: '60%'}
                 }} >
                     <Typography variant={'h2'} component={'h2'}>
                         Projects

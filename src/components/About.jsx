@@ -5,7 +5,7 @@ import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 const About = () => {
     return (
-        <Stack id={'about'} pt={5} mt={5}  sx={{
+        <Stack pb={5} id={'about'} pt={5} mt={5}  sx={{
             background: 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)',
 
 

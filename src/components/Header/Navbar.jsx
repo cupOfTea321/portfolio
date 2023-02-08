@@ -140,8 +140,10 @@ function Navbar() {
                             </Button>
                         ))}
                     </Box>
+                    <Box sx={{display: {xs: 'none', sm:'flex'}}}>
+                        <Navicons/>
+                    </Box>
 
-                    <Navicons/>
                     <Button color="inherit" sx={{border: '1px solid white'}} className={`pills`}
                     onClick={handleToggle}>Let`s Connect</Button>
                     <Backdrop
