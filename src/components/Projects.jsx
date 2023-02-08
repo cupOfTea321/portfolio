@@ -1,22 +1,22 @@
 import React from 'react';
-import {Box, Container, Grid, Link, Paper, Stack, Typography} from "@mui/material";
+import {Box, Container, Grid, Link, Paper, Typography} from "@mui/material";
 import projImg1 from "../assets/img/yout2.png";
 import projImg2 from "../assets/img/musicApp.png";
-import projImg3 from "../assets/img/project-img3.png";
 import ProjectCard from "./ProjectCard";
+
 const Projects = () => {
     const projects = [
         {
             title: "Videos App",
-            description: "React JS",
+            description: "React JS / MUI",
             imgUrl: projImg1,
             href: 'https://cupoftea321.github.io/youtube2-app/'
         },
         {
             title: "Music App",
-            description: "React / Redux JS",
+            description: "React JS/ Redux / tailwind.css",
             imgUrl: projImg2,
-            href: ''
+            href: 'https://alexk-lyriks-app.netlify.app/'
         },
 
     ];
