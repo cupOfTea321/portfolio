@@ -16,11 +16,7 @@ const Projects = () => {
             description: "React JS",
             imgUrl: projImg2,
         },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
+
     ];
     return (
         <Box display={'flex'} mt={10} id={'Projects'}>
@@ -32,14 +28,14 @@ const Projects = () => {
                         Projects
                     </Typography>
                     <Typography variant={'h6'} component={'h5'} sx={{color: '#B8B8B8'}}>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        Responsive cross-platform web applications based on React
                     </Typography>
                 </Box>
 
                 <Grid mt={5} sx={{ flexGrow: 1 }} container mb={10} spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justifyContent="center" spacing={2}>
-                            {[0, 1, 2].map((value) => (
+                            {[0, 1].map((value) => (
                                 <Grid key={value} item>
                                     <Paper
                                         className={`pills`}

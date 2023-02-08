@@ -3,7 +3,7 @@ import Navbar from "./components/Header/Navbar";
 import Banner from "./components/Banner";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Contact from "./components/Contact";
+import About from "./components/About";
 import Footer from "./components/Footer";
 import {Container, createTheme, Paper, ThemeProvider} from "@mui/material";
 import bannerBg from "./assets/img/banner-bg.png";
@@ -35,7 +35,7 @@ function App() {
           </Paper>
               <Skills />
               <Projects />
-              <Contact />
+              <About />
               <Footer />
           </ThemeProvider>
 

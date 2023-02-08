@@ -5,9 +5,11 @@ import bannerBg from '../assets/img/banner-bg.png'
 import './components.css'
 import {Link} from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
 const Banner = () => {
     return (
-        <Box id={'Home'} sx={{display: 'flex', alignItems: 'center', padding: '160px 0 100px 0', backgroundImage: bannerBg, color: 'white' }}>
+        <Box className={`banner`} id={'Home'} sx={{display: 'flex', alignItems: 'center', padding: '160px 0 100px 0', backgroundImage: bannerBg, color: 'white' }}>
             <Stack width={'60%'}>
                 <Typography
                 variant={'h5'}
@@ -32,7 +34,11 @@ const Banner = () => {
                     Hi! I`m Alex Web Developer
                 </Typography>
                 <Typography sx={{fontSize: '18px'}}>
-                    <p style={{color: '#B8B8B8'}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p style={{color: '#B8B8B8'}}>
+                        I make adaptive cross-platform web applications such as video
+                        or music platforms, landing pages and others. Web development
+                        experience about 1.5 years.
+                    </p>
                 </Typography>
 
                 <Typography mt={2} sx={{fontSize: '20px', }}>
@@ -44,9 +50,14 @@ const Banner = () => {
 
             </Stack>
 
-            <Box ml={2} className={`banner`}>
-                <img sx={{}} src={headerImg} alt=""/>
-            </Box>
+            <TrackVisibility>
+                {({ isVisible }) =>
+                <Box ml={2}  className={ isVisible ? "animate__animated animate__zoomIn" : ""}>
+                        <img  src={headerImg} alt=""/>
+                        </Box>}
+            </TrackVisibility>
+
+
         </Box>
     );
 };
