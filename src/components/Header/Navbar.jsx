@@ -11,11 +11,14 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AcUnitRoundedIcon from '@mui/icons-material/AcUnitRounded';
 import Navicons from "./Navicons";
+import {useState} from "react";
+import {Link} from "@mui/material";
 
 const pages = ['Home', 'Skills', 'Projects'];
 
 function Navbar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -24,6 +27,11 @@ function Navbar() {
         setAnchorElNav(null);
     };
 
+    const [activeLink, setActiveLink] = useState('home');
+    const onUpdateActiveLink = (value) => {
+        setActiveLink(value);
+        console.log(value)
+    }
     return (
         <AppBar  color={'primary'} sx={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
             <Container>
@@ -58,6 +66,7 @@ function Navbar() {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
+                            className={`pills`}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -81,7 +90,12 @@ function Navbar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Button href={`#${page}`} textAlign="center"
+                                    sx={{color: 'black'}}>
+                                            {page}
+
+
+                                    </Button>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -109,7 +123,9 @@ function Navbar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
+                                className={`pills`}
                                 key={page}
+                                href={`#${page}`}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
@@ -119,7 +135,7 @@ function Navbar() {
                     </Box>
 
                     <Navicons/>
-                    <Button color="inherit" sx={{border: '1px solid white'}}>Let`s Connect</Button>
+                    <Button color="inherit" sx={{border: '1px solid white'}} className={`pills`}>Let`s Connect</Button>
 
                 </Toolbar>
             </Container>

@@ -18,15 +18,16 @@ import {FreeMode} from "swiper";
 const Skills = () => {
 
     return (
-        <Box id="skills" sx={{marginTop: '-10%'}}>
+        <Box id="Skills" sx={{marginTop: '-10%'}}>
             <Container sx={{
                 backgroundColor: '#151515',
                 borderRadius: '64px',
                 textAlign: 'center',
                 padding: '60px 50px',
                 marginTop: '-60px',
+
             }}>
-                <Stack  sx={{display: 'flex', justifyContent: 'center'}}>
+                <Stack  sx={{display: 'flex', justifyContent: 'center', width: '60%', marginLeft: '20%'}}>
                     <Typography variant={'h2'} component={'h2'}>
                         Skills
                     </Typography>
@@ -35,9 +36,9 @@ const Skills = () => {
                         Lorem Ipsum has been the industry's standard dummy text.
                     </Typography>
                     <Swiper
-                        slidesPerView="auto"
-                        width={"200%"}
-                        spaceBetween={80}
+                        slidesPerView={3}
+                        width={"100%"}
+                        spaceBetween={30}
                         loop={true}
                         pagination={{
                             clickable: true,

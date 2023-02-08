@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const Banner = () => {
     return (
-        <Box sx={{display: 'flex', alignItems: 'center', padding: '160px 0 100px 0', backgroundImage: bannerBg, color: 'white' }}>
+        <Box id={'Home'} sx={{display: 'flex', alignItems: 'center', padding: '160px 0 100px 0', backgroundImage: bannerBg, color: 'white' }}>
             <Stack width={'60%'}>
                 <Typography
                 variant={'h5'}
