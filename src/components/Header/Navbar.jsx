@@ -12,11 +12,23 @@ import MenuItem from '@mui/material/MenuItem';
 import AcUnitRoundedIcon from '@mui/icons-material/AcUnitRounded';
 import Navicons from "./Navicons";
 import {useState} from "react";
-import {Link} from "@mui/material";
+import {Backdrop, CircularProgress, Link} from "@mui/material";
+import BackdropMenu from "../BackdropMenu";
 
 const pages = ['Home', 'Skills', 'Projects'];
 
 function Navbar() {
+
+    //for backdrop
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const handleToggle = () => {
+        setOpen(!open);
+    };
+
+
     const [anchorElNav, setAnchorElNav] = useState(null);
 
     const handleOpenNavMenu = (event) => {
@@ -27,11 +39,6 @@ function Navbar() {
         setAnchorElNav(null);
     };
 
-    const [activeLink, setActiveLink] = useState('home');
-    const onUpdateActiveLink = (value) => {
-        setActiveLink(value);
-        console.log(value)
-    }
     return (
         <AppBar  color={'primary'} sx={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
             <Container>
@@ -66,7 +73,7 @@ function Navbar() {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
-                            className={`pills`}
+
                         >
                             <MenuIcon />
                         </IconButton>
@@ -135,8 +142,15 @@ function Navbar() {
                     </Box>
 
                     <Navicons/>
-                    <Button color="inherit" sx={{border: '1px solid white'}} className={`pills`}>Let`s Connect</Button>
-
+                    <Button color="inherit" sx={{border: '1px solid white'}} className={`pills`}
+                    onClick={handleToggle}>Let`s Connect</Button>
+                    <Backdrop
+                        sx={{ color: 'black',backgroundColor: 'rgba(255,255,255,0.1)', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+                        onClick={handleClose}
+                    >
+                        <BackdropMenu/>
+                    </Backdrop>
                 </Toolbar>
             </Container>
         </AppBar>
