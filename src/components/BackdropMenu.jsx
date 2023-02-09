@@ -3,7 +3,7 @@ import {Box, Stack, Typography} from "@mui/material";
 
 const BackdropMenu = () => {
     return (
-        <Box bgcolor={'black'} sx={{
+        <Box bgcolor={'#151515'} sx={{
             padding: {xs: '20px', sm:'20px', md:'100px'},
             display: 'flex',
             flexDirection: 'column',
