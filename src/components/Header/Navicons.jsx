@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import {
     Button,
     Divider,
@@ -13,7 +14,7 @@ import {
     ListItem,
     ListItemButton,
     ListItemIcon,
-    ListItemText,
+    ListItemText, Stack,
     Typography
 } from "@mui/material";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
@@ -33,7 +34,8 @@ export default function Navicons() {
 
     const list = (anchor) => (
         <Box
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 ,
+            color: 'white', backgroundColor: '#151515', }}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
@@ -41,13 +43,14 @@ export default function Navicons() {
             <Typography variant={'h5'} mx={2}>
                 For any questions you can write here
             </Typography>
-            <Divider />
-            <List>
+            <Divider color={'white'} sx={{margin: '10px 0px'}}/>
+            <List >
                 {['Telegram'].map((text, index) => (
                     <ListItem  key={text} disablePadding>
                         <ListItemButton href={'https://web.telegram.org/k/'}>
-                            <ListItemIcon>
-                                {index % 2 === 1 ? <InboxIcon /> : <MailIcon />}
+                            <ListItemIcon >
+                                {index % 2 === 1 ? <InboxIcon  color={'white'}/> :
+                                    <MailIcon color={'white'} />}
                             </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItemButton>
@@ -57,12 +60,12 @@ export default function Navicons() {
                     @GDEua
                 </Typography>
             </List>
-            <Divider />
-            <List>
+            <Divider color={'white'} sx={{margin: '10px 0px'}}/>
+            <List sx={{color: 'white', backgroundColor: '#151515', paddingBottom: '320%'}}>
                 {['Vkontakte'].map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton href={'https://vk.com/alexk1703'}>
-                            <ListItemIcon>
+                            <ListItemIcon color={'white'}>
                                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                             </ListItemIcon>
                             <ListItemText primary={text} />
@@ -73,47 +76,46 @@ export default function Navicons() {
         </Box>
     );
     return (
-        <Box sx={{ flexGrow: 1 }}>
+
+            <Box sx={{ flexGrow: 1}}>
                 <Toolbar>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: {  md: 'flex' } }}>
-                        {['right'].map((anchor) => (
-                        <IconButton
-                            onClick={toggleDrawer(anchor, true)}
-                            className={`social-icon`}  size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge  color="error" >
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        ))}
-                        {['right'].map((anchor) => (
-                            <React.Fragment key={anchor}>
-                        <IconButton
-                            className={`social-icon`}
-                            size="large"
-                            aria-label="show 17 new notifications"
-                            color="inherit"
-                            onClick={toggleDrawer(anchor, true)}
-                            key={anchor}
+                    <Box sx={{ }}>
+                        <Stack ml={{xs: - 12, sm:0}} direction={{sx: 'column', sm:'row'}}>
+                            <IconButton
+                                className={`social-icon`}  size="large" color="inherit"
+                                href={'https://github.com/cupOfTea321'}>
+                                <GitHubIcon />
+                            </IconButton>
 
-                        >
 
-                            <Badge badgeContent={1} color="error">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
-                                <Drawer
-                                    anchor={anchor}
-                                    open={state[anchor]}
-                                    onClose={toggleDrawer(anchor, false)}
-                                >
-                                    {list(anchor)}
-                                </Drawer>
-                            </React.Fragment>
-                        ))}
+                            {/*открытие боковой панели с контактами*/}
+                            {['right'].map((anchor) => (
+                                <React.Fragment key={anchor}>
+                                    <IconButton
+                                        className={`social-icon`}
+                                        size="large"
+                                        color="inherit"
+                                        onClick={toggleDrawer(anchor, true)}
+                                    >
+                                        <MailIcon />
+                                    </IconButton>
+                                    <Drawer
+                                        anchor={anchor}
+                                        open={state[anchor]}
+                                        onClose={toggleDrawer(anchor, false)}
+                                    >
+                                        {list(anchor)}
+                                    </Drawer>
+                                </React.Fragment>
+                            ))}
+                        </Stack>
+
                     </Box>
 
                 </Toolbar>
-        </Box>
+            </Box>
+
+
     );
 }

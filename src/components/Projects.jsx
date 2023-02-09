@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Grid, Link, Paper, Typography} from "@mui/material";
+import {Box, Button, Container, Grid, Link, Paper, Typography} from "@mui/material";
 import projImg1 from "../assets/img/yout2.png";
 import projImg2 from "../assets/img/musicApp.png";
 import ProjectCard from "./ProjectCard";
@@ -22,11 +22,11 @@ const Projects = () => {
     ];
     const tabs = [
         {
-            id: 1,
+            id: 'Apps',
             href: '#projects'
         },
         {
-            id: 2,
+            id: 'About',
             href: '#about'
         }
     ]
@@ -45,28 +45,33 @@ const Projects = () => {
                     </Typography>
                 </Box>
 
-                <Grid mt={5} sx={{ flexGrow: 1 }} container mb={10} spacing={2}>
+                <Grid ml={{xs: -2, sm: -2, md:0}} mt={5} sx={{ flexGrow: 1 }} container mb={10} >
                     <Grid item xs={12}>
                         <Grid container justifyContent="center" spacing={2}>
                             {tabs.map((value) => (
-                                <Grid key={value} item>
-                                    <Paper
-                                        className={`pills`}
-                                        sx={{
-                                            height: 60,
-                                            width: 200,
-                                            backgroundColor: 'transparent',
-                                            color: '#fff',
-                                            border: '2px solid gray',
-                                            borderRadius: '20px',
+                                <Grid key={value} item >
+                                    <Button href={value.href} >
+                                        <Paper
 
-                                        }}
-                                    >
-                                        <Typography variant={'h4'} sx={{textAlign: 'center'}} mt={1}>
-                                            <Link sx={{color: 'white', textDecoration: 'none'}} href={value.href}> Tab {value.id}</Link>
-                                        </Typography>
+                                            className={`pills`}
+                                            sx={{
+                                                height: 60,
+                                                width: 200,
+                                                backgroundColor: 'transparent',
+                                                color: '#fff',
+                                                border: '2px solid gray',
+                                                borderRadius: '20px',
 
-                                    </Paper>
+                                            }}
+                                        >
+                                            <Typography variant={'h4'} sx={{textAlign: 'center'}} mt={1}>
+                                                <Link sx={{color: 'white', textDecoration: 'none'}} >
+                                                    {value.id}</Link>
+                                            </Typography>
+
+                                        </Paper>
+                                    </Button>
+
                                 </Grid>
                             ))}
                         </Grid>

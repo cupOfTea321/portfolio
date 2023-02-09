@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Stack, Typography} from "@mui/material";
+import {Box, IconButton, Stack, Typography} from "@mui/material";
 import headerImg from '../assets/img/header-img.svg'
 import bannerBg from '../assets/img/banner-bg.png'
 import './components.css'
@@ -9,8 +9,8 @@ import 'animate.css';
 import TrackVisibility from "react-on-screen";
 const Banner = () => {
     return (
-        <Box className={`banner`} id={'Home'} sx={{display: 'flex', alignItems: 'center', padding: '160px 0 100px 0', backgroundImage: bannerBg, color: 'white' }}>
-            <Stack width={'60%'}>
+        <Stack  className={`banner`}  direction={{ sm: 'column', md: 'row' }} id={'Home'} sx={{display: 'flex', alignItems: 'center', padding: '160px 0 100px 0', backgroundImage: bannerBg, color: 'white' }}>
+            <Stack width={{xs: '80%',sm:'60%'}}>
                 <Typography
                 variant={'h5'}
 
@@ -32,24 +32,26 @@ const Banner = () => {
 
                     component={"h1"}
                     sx={{
-                        fontSize: {sm:'32px', md: '48px'}
+                        fontSize: {xs:'22px',sm:'32px', md: '48px'}
                     }}
                 >
-                    Hi! I`m Alex Web Developer
+                    Hi! I`m Alex, Experienced Web Developer
                 </Typography>
-                <Typography sx={{fontSize: {xs: '14px',sm:'18px'}}}>
+                <Typography sx={{fontSize: {xs: '20px',sm:'18px'}}}>
                     <p style={{color: '#B8B8B8'}}>
                         I make adaptive cross-platform web applications such as video
-                        or music platforms, landing pages and others. Web development
-                        experience about 1.5 years.
+                        or music platforms, landing pages, etc. I have about 0.5
+                        years of web development experience.
                     </p>
                 </Typography>
 
-                <Typography mt={2} sx={{fontSize: '20px', }}>
-                    <Link className={`linkArrow`} to={`/` } style={{display: 'flex', alignItems: 'center'}}>
-                        <span  style={{color: 'white'}}>Let`s connect! </span>
-                        <ArrowForwardIcon  fontSize={'25px'}/>
-                    </Link>
+                <Typography mt={2} sx={{fontSize: '20px',}} ml={-1}>
+                    <IconButton className={`linkArrow`} sx={{display: 'flex', alignItems: 'center'}}
+                    >
+                            <a href={'https://github.com/cupOfTea321'}  style={{color: 'white'}}>Show more on GitHub! </a>
+                            <ArrowForwardIcon  fontSize={'25px'}/>
+                    </IconButton>
+
                 </Typography>
 
             </Stack>
@@ -62,7 +64,7 @@ const Banner = () => {
             </TrackVisibility>
 
 
-        </Box>
+        </Stack>
     );
 };
 

@@ -12,10 +12,10 @@ import MenuItem from '@mui/material/MenuItem';
 import AcUnitRoundedIcon from '@mui/icons-material/AcUnitRounded';
 import Navicons from "./Navicons";
 import {useState} from "react";
-import {Backdrop, CircularProgress, Link} from "@mui/material";
+import {Backdrop, CircularProgress, Link, Stack} from "@mui/material";
 import BackdropMenu from "../BackdropMenu";
 
-const pages = ['Home', 'Skills', 'Projects'];
+const pages = [ 'Skills', 'Projects'];
 
 function Navbar() {
 
@@ -50,7 +50,7 @@ function Navbar() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
+                        href="#Home"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -105,6 +105,10 @@ function Navbar() {
                                     </Button>
                                 </MenuItem>
                             ))}
+
+                                <Navicons/>
+
+
                         </Menu>
                     </Box>
 
@@ -114,7 +118,7 @@ function Navbar() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
+                        href="#Home"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -138,7 +142,9 @@ function Navbar() {
                             >
                                 {page}
                             </Button>
+
                         ))}
+
                     </Box>
                     <Box sx={{display: {xs: 'none', sm:'flex'}}}>
                         <Navicons/>

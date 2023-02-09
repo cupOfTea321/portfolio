@@ -129,3 +129,8 @@
     color: black;
     transition: 0.3s ease-in-out;
 }
+
+/*переопределение цвета иконок боковой панели*/
+.css-cveggr-MuiListItemIcon-root{
+    color: white !important
+}

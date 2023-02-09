@@ -1,15 +1,9 @@
 import React from 'react';
-import {Box, Container, Stack, Typography} from "@mui/material";
+import {Box, Container, Grid, Stack, Typography} from "@mui/material";
 import colorSharp from '../assets/img/color-sharp.png'
 import meter1 from '../assets/img/meter1.svg'
 import meter2 from '../assets/img/meter2.svg'
 import meter3 from '../assets/img/meter3.svg'
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
-import { Pagination, Navigation } from "swiper";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -18,7 +12,7 @@ import {FreeMode} from "swiper";
 const Skills = () => {
 
     return (
-        <Box id="Skills" sx={{marginTop: '-10%'}}>
+        <Box  id="Skills" sx={{marginTop:{xs: '35%', sm: '15%', md: 0}}}>
             <Container sx={{
                 backgroundColor: '#151515',
                 borderRadius: '64px',
@@ -37,50 +31,36 @@ const Skills = () => {
                         HTML 5 / CSS 3 / JS ES5-ES6 <br/>
                         MUI / tailwind.css / bootstrap
                     </Typography>
-                    <Box>
-                        <Swiper
-                            slidesPerView={3}
-                            width={"100%"}
-                            spaceBetween={30}
-                            loop={true}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            navigation={true}
-                            modules={[Pagination, Navigation]}
-                            centeredSlides
-
-
-                            className="mySwiper"
-                            style={{marginTop: '20px'}}
-
-                        >
-                            <SwiperSlide style={{width: '25%'}}>
+                    <Stack mt={2} direction={'row'} spacing={6}>
+                        <Grid container spacing={2}>
+                            <Grid item xs={6} md={3} >
                                 <img src={meter1} alt="meter1"/>
-                                <Typography variant={'h6'}>
+                                <Typography sx={{fontSize: {sx: '14px', sm: '16px', md:'18px'}}}>
                                     Web Development
                                 </Typography>
-                            </SwiperSlide>
-                            <SwiperSlide style={{width: '25%'}}>
-                                <img src={meter2} alt="meter2"/>
-                                <Typography variant={'h6'}>
-                                    Web Design
-                                </Typography>
-                            </SwiperSlide>
-                            <SwiperSlide style={{width: '25%'}}>
-                                <img src={meter3} alt="meter3"/>
-                                <Typography variant={'h6'}>
-                                    Brand Identity
-                                </Typography>
-                            </SwiperSlide>
-                            <SwiperSlide style={{width: '25%'}}>
+                            </Grid>
+
+                            <Grid item xs={6} md={3}>
                                 <img src={meter1} alt="meter1"/>
-                                <Typography variant={'h6'}>
+                                <Typography sx={{fontSize: {sx: '14px', sm: '16px', md:'18px'}}}>
                                     Soft Skills
                                 </Typography>
-                            </SwiperSlide>
-                        </Swiper>
-                    </Box>
+                            </Grid>
+                            <Grid item xs={6} md={3}>
+                                <img src={meter2} alt="meter1"/>
+                                <Typography sx={{fontSize: {sx: '14px', sm: '16px', md:'18px'}}}>
+                                    Brand Identity
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={6} md={3}>
+                                <img src={meter3} alt="meter1"/>
+                                <Typography sx={{fontSize: {sx: '14px', sm: '16px', md:'18px'}}}>
+                                    Web Design
+                                </Typography>
+                            </Grid>
+                        </Grid>
+
+                    </Stack>
 
                 </Stack>
             </Container>

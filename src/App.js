@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import {Container, createTheme, Paper, ThemeProvider} from "@mui/material";
 import bannerBg from "./assets/img/banner-bg.png";
 import Centra from './assets/font/CentraNo2-Medium.ttf'
+import Aducation from "./components/Education";
 const styles = {
     paperContainer: {
         backgroundImage: `url(${bannerBg})`
@@ -29,13 +30,14 @@ function App() {
 
           }}>
         <Navbar/>
-          <Container sx={{mt: '20px', height: '100vh'}}>
+          <Container  sx={{mt: '20px', height: '100vh'}}>
               <Banner />
           </Container>
           </Paper>
               <Skills />
               <Projects />
               <About />
+              <Aducation/>
               <Footer />
           </ThemeProvider>
 

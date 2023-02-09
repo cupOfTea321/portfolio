@@ -3,14 +3,14 @@ import {Box, Stack, Typography} from "@mui/material";
 
 const BackdropMenu = () => {
     return (
-        <Box bgcolor={'white'} sx={{
+        <Box bgcolor={'black'} sx={{
             padding: {xs: '20px', sm:'20px', md:'100px'},
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'centre',
             textAlign: 'centre',
             borderRadius: '20px',
-
+            color: 'white',
         }}>
             <Stack direction={'row'}>
                 <Typography sx={{
